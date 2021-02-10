@@ -91,3 +91,4 @@ add_filter('comments_template', function ($comments_template) {
 }, 100);
 
 add_image_size( 'myCustomSize', 600, 600, true);
+add_image_size( 'myfullsize', '4000', '3000', false );

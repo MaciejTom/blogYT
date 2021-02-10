@@ -2,37 +2,31 @@
 
 @section("content")
 
-   <h2>{{the_title()}} </h2>
+   <h2>{{the_title()}} </h2> 
+   
+  <div class="flex">
 
-    @php
-        $args = [
+    @foreach( $odcinki as $odcinek)
 
-        'post_type' => 'odcinki'
-        
-        ];
-            $the_query = new WP_Query($args);
+    <a href="{{$odcinek->permalink}}">
+    <div>
+    
+        <img class="images" src="{{ $odcinek->picture }}" alt="{{$odcinek->alt}}" title="{{$odcinek->title}}">
+        <h3>{{$odcinek->episode}}</h3>
+    </div>
+    </a>
+    @if ($loop->iteration % 3 === 0)
+    </div>
+    <div class="flex">
+    @endif
+    @endforeach
+</div>
+    
+    
+    </div>
+  
 
-            
-           
 
-    @endphp
-
-    @while($the_query->have_posts()) @php $the_query->the_post() @endphp
-    @php
-        
-       
-        $image = get_field('miniatura_odcinka');
-
-        $picture = $image['sizes']['myCustomSize'];
-        $title = $image['title'];
-        $alt = $image['alt'];
-        $caption = $image['caption'];
-      
-    @endphp
     
 
-        <img class="images" src="{{ $picture }}" alt="{{$alt}}" title="{{$title}}">
-
-       
-    @endwhile
 @stop

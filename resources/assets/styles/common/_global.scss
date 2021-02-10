@@ -1,3 +1,17 @@
-.images { 
-    border-radius: 100%;  
-} 
+.images {
+  border-radius: 100%;
+  width: 100px;
+  display: block;
+  margin: auto;
+
+  &:hover {
+    width: 100%;
+    border-radius: 0%;
+    transition: 2s;
+  }
+}
+
+.flex {
+  display: flex;
+  justify-content: space-evenly;
+}
