@@ -1,3 +1,49 @@
+/* line 1, resources/assets/styles/common/_reset.scss */
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+/* line 6, resources/assets/styles/common/_reset.scss */
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* line 12, resources/assets/styles/common/_reset.scss */
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+/* line 27, resources/assets/styles/common/_reset.scss */
+
+ol,
+ul {
+  list-style: none;
+}
+
+/* line 32, resources/assets/styles/common/_reset.scss */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 /** Colors */
 
 /** Box Model  */
@@ -108,7 +154,7 @@
 
 /* line 3, resources/assets/styles/layouts/_header.scss */
 
-.page-header {
+.banner {
   background-image: url(/app/themes/blogYT/dist/images/dawid.jpg);
   height: 100vh;
   background-size: cover;
@@ -127,12 +173,6 @@
 
 .SinglePageHeader_hero {
   height: 80vh;
-}
-
-/* line 1, resources/assets/styles/layouts/_tinymce.scss */
-
-body#tinymce {
-  margin: 12px !important;
 }
 
 
