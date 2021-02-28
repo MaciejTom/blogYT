@@ -1,0 +1,25 @@
+.form {
+  padding: 2rem;
+  background-color: $secondColor;
+
+  .form_contact {
+    label {
+      font-size: 1.3rem !important;
+    }
+
+    button {
+      color: white !important;
+      border: 1px black solid !important;
+      border-radius: 0.3rem !important;
+      background: black !important;
+      font-weight: 200 !important;
+    }
+
+    input,
+    textarea {
+      background: black !important;
+      color: white !important;
+      border-radius: 0.3rem !important;
+    }
+  }
+}

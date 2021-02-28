@@ -59,28 +59,28 @@ img {
 
 /** Import theme styles */
 
-/* line 1, resources/assets/styles/common/_global.scss */
-
-.images {
-  border-radius: 100%;
-  width: 100px;
-  display: block;
-  margin: auto;
+@font-face {
+  font-family: "almendra";
+  font-style: normal;
+  font-weight: normal;
+  src: url(/app/themes/blogYT/dist/fonts/almendra.regular.ttf) format("truetype");
 }
 
-/* line 7, resources/assets/styles/common/_global.scss */
+/* line 8, resources/assets/styles/common/_global.scss */
 
-.images:hover {
+body {
+  font-family: "Almendra", serif;
+}
+
+/* line 12, resources/assets/styles/common/_global.scss */
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1160px;
+  padding-right: 10px;
+  padding-left: 10px;
   width: 100%;
-  border-radius: 0%;
-  transition: 2s;
-}
-
-/* line 14, resources/assets/styles/common/_global.scss */
-
-.flex {
-  display: flex;
-  justify-content: space-evenly;
 }
 
 /** Search form */
@@ -152,15 +152,155 @@ img {
   background: #fff;
 }
 
-/* line 3, resources/assets/styles/layouts/_header.scss */
+/* line 4, resources/assets/styles/layouts/_header.scss */
+
+.banner_menu {
+  display: flex;
+  text-transform: uppercase;
+  background-color: black;
+  padding-top: 1rem;
+}
+
+/* line 10, resources/assets/styles/layouts/_header.scss */
+
+.banner_menu .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* line 14, resources/assets/styles/layouts/_header.scss */
+
+.banner_menu .container .nav-primary {
+  display: flex;
+  align-items: center;
+}
+
+/* line 18, resources/assets/styles/layouts/_header.scss */
+
+.banner_menu .container .nav-primary .nav {
+  display: flex;
+}
+
+/* line 21, resources/assets/styles/layouts/_header.scss */
+
+.banner_menu .container .nav-primary .nav a {
+  text-decoration: none;
+  color: white;
+}
+
+/* line 25, resources/assets/styles/layouts/_header.scss */
+
+.banner_menu .container .nav-primary .nav a:visited {
+  color: white;
+}
+
+/* line 30, resources/assets/styles/layouts/_header.scss */
+
+.banner_menu .container .nav-primary .nav li {
+  padding-right: 3rem;
+}
+
+/* line 36, resources/assets/styles/layouts/_header.scss */
+
+.banner_menu .container .banner_img {
+  height: 60px;
+}
+
+/* line 42, resources/assets/styles/layouts/_header.scss */
 
 .banner {
-  background-image: url(/app/themes/blogYT/dist/images/dawid.jpg);
+  background-image: linear-gradient(0deg, black 2%, rgba(0, 0, 0, 0.392595) 17%, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.2) 88%, rgba(0, 0, 0, 0.5) 98%), url(/app/themes/blogYT/dist/images/dawid.jpg);
   height: 100vh;
   background-size: cover;
-  background-position: center center;
+  background-position: 0% 30%;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+}
+
+/* line 58, resources/assets/styles/layouts/_header.scss */
+
+.banner .banner_menu {
+  display: flex;
+  text-transform: uppercase;
+  background-color: transparent;
+}
+
+/* line 63, resources/assets/styles/layouts/_header.scss */
+
+.banner .banner_menu .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* line 67, resources/assets/styles/layouts/_header.scss */
+
+.banner .banner_menu .container .nav-primary {
+  display: flex;
+  align-items: center;
+}
+
+/* line 71, resources/assets/styles/layouts/_header.scss */
+
+.banner .banner_menu .container .nav-primary .nav {
+  display: flex;
+}
+
+/* line 74, resources/assets/styles/layouts/_header.scss */
+
+.banner .banner_menu .container .nav-primary .nav a {
+  text-decoration: none;
+  color: black;
+}
+
+/* line 78, resources/assets/styles/layouts/_header.scss */
+
+.banner .banner_menu .container .nav-primary .nav a:visited {
+  color: black;
+}
+
+/* line 83, resources/assets/styles/layouts/_header.scss */
+
+.banner .banner_menu .container .nav-primary .nav li {
+  padding-right: 3rem;
+}
+
+/* line 89, resources/assets/styles/layouts/_header.scss */
+
+.banner .banner_menu .container .banner_img {
+  height: 60px;
+}
+
+/* line 95, resources/assets/styles/layouts/_header.scss */
+
+.banner .banner_content {
+  height: calc(100% - 64px);
+}
+
+/* line 98, resources/assets/styles/layouts/_header.scss */
+
+.banner .banner_content .container {
+  flex-direction: column;
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+}
+
+/* line 104, resources/assets/styles/layouts/_header.scss */
+
+.banner .banner_content .container .banner_title {
+  font-size: 4.5rem;
+}
+
+/* line 108, resources/assets/styles/layouts/_header.scss */
+
+.banner .banner_content .container .banner_arrow {
+  width: 5rem;
+  transform: rotate(90deg);
+}
+
+/* line 1, resources/assets/styles/layouts/_footer.scss */
+
+.footer {
+  background-color: black;
 }
 
 /* line 1, resources/assets/styles/layouts/_pages.scss */
@@ -173,6 +313,158 @@ img {
 
 .SinglePageHeader_hero {
   height: 80vh;
+}
+
+/* line 1, resources/assets/styles/layouts/_odcinki-page.scss */
+
+body {
+  background-color: #2e294e;
+}
+
+/* line 4, resources/assets/styles/layouts/_odcinki-page.scss */
+
+body .episodes {
+  display: flex;
+  padding: 3rem 0;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+/* line 10, resources/assets/styles/layouts/_odcinki-page.scss */
+
+body .episodes a {
+  color: black;
+  text-decoration: none;
+}
+
+/* line 14, resources/assets/styles/layouts/_odcinki-page.scss */
+
+body .episodes a .episodes_card {
+  display: flex;
+  border-bottom: black 1px solid;
+  padding-bottom: 3rem;
+  margin-bottom: 3rem;
+}
+
+/* line 20, resources/assets/styles/layouts/_odcinki-page.scss */
+
+body .episodes a .episodes_card .episodes_image {
+  border-radius: 10%;
+  display: block;
+  margin: auto;
+}
+
+/* line 26, resources/assets/styles/layouts/_odcinki-page.scss */
+
+body .episodes a .episodes_card .episodes_infoCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 2rem;
+}
+
+/* line 32, resources/assets/styles/layouts/_odcinki-page.scss */
+
+body .episodes a .episodes_card .episodes_infoCard .episodes_title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* line 37, resources/assets/styles/layouts/_odcinki-page.scss */
+
+body .episodes a .episodes_card .episodes_infoCard .episode_date {
+  font-weight: bold;
+}
+
+/* line 1, resources/assets/styles/layouts/_firstSection.scss */
+
+.aboutUs {
+  background-color: black;
+  padding: 10rem 30rem 17rem 30rem;
+  font-size: 2rem;
+  color: white;
+  position: relative;
+}
+
+/* line 8, resources/assets/styles/layouts/_firstSection.scss */
+
+.aboutUs .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* line 13, resources/assets/styles/layouts/_firstSection.scss */
+
+.aboutUs .container .aboutUs_text {
+  padding-top: 2rem;
+}
+
+/* line 17, resources/assets/styles/layouts/_firstSection.scss */
+
+.aboutUs .container::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: #2e294e;
+  clip-path: polygon(100% 0, 0 100%, 100% 100%);
+}
+
+/* line 29, resources/assets/styles/layouts/_firstSection.scss */
+
+.aboutUs .aboutUs_btn {
+  background: transparent;
+  color: white;
+  border: 1px white solid;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  margin-top: 3rem;
+  border-radius: 0.3rem;
+}
+
+/* line 38, resources/assets/styles/layouts/_firstSection.scss */
+
+.aboutUs .aboutUs_btn:hover {
+  background-color: #be0000;
+  transition: 1s ease-in-out;
+  color: black;
+  border: black;
+  font-weight: bold;
+}
+
+/* line 1, resources/assets/styles/layouts/_form.scss */
+
+.form {
+  padding: 2rem;
+  background-color: #2e294e;
+}
+
+/* line 6, resources/assets/styles/layouts/_form.scss */
+
+.form .form_contact label {
+  font-size: 1.3rem !important;
+}
+
+/* line 10, resources/assets/styles/layouts/_form.scss */
+
+.form .form_contact button {
+  color: white !important;
+  border: 1px black solid !important;
+  border-radius: 0.3rem !important;
+  background: black !important;
+  font-weight: 200 !important;
+}
+
+/* line 18, resources/assets/styles/layouts/_form.scss */
+
+.form .form_contact input,
+.form .form_contact textarea {
+  background: black !important;
+  color: white !important;
+  border-radius: 0.3rem !important;
 }
 
 

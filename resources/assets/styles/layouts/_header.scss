@@ -1,10 +1,114 @@
 // TODO: .banner .nav li {}
 // TODO: .banner .nav a {}
+///////////////////////////////////////STYLES FOR NO FRONT NAV
+.banner_menu {
+  display: flex;
+  text-transform: uppercase;
+  background-color: black;
+  padding-top: 1rem;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+
+    .nav-primary {
+      display: flex;
+      align-items: center;
+
+      .nav {
+        display: flex;
+
+        a {
+          text-decoration: none;
+          color: white;
+
+          &:visited {
+            color: white;
+          }
+        }
+
+        li {
+          padding-right: 3rem;
+        }
+      }
+    }
+
+    .banner_img {
+      height: 60px;
+    }
+  }
+}
+///////////////////////////////////////FRONT HEADER STYLES
 .banner {
-  background-image: url("../images/dawid.jpg");
+  background-image:
+    linear-gradient(
+      0deg,
+      black 2%,
+      rgba(0, 0, 0, 0.392595) 17%,
+      rgba(255, 255, 255, 0) 50%,
+      rgba(0, 0, 0, 0.2) 88%,
+      rgba(0, 0, 0, 0.5) 98%
+    ),
+    url(/app/themes/blogYT/dist/images/dawid.jpg);
   height: 100vh;
   background-size: cover;
-  background-position: center center;
+  background-position: 0% 30%;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+
+  .banner_menu {
+    display: flex;
+    text-transform: uppercase;
+    background-color: transparent;
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+
+      .nav-primary {
+        display: flex;
+        align-items: center;
+
+        .nav {
+          display: flex;
+
+          a {
+            text-decoration: none;
+            color: black;
+
+            &:visited {
+              color: black;
+            }
+          }
+
+          li {
+            padding-right: 3rem;
+          }
+        }
+      }
+
+      .banner_img {
+        height: 60px;
+      }
+    }
+  }
+
+  .banner_content {
+    height: calc(100% - 64px);
+
+    .container {
+      flex-direction: column;
+      display: flex;
+      justify-content: space-around;
+      height: 100%;
+
+      .banner_title {
+        font-size: 4.5rem;
+      }
+
+      .banner_arrow {
+        width: 5rem;
+        transform: rotate(90deg);
+      }
+    }
+  }
 }

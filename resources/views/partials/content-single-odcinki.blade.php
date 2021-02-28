@@ -1,5 +1,5 @@
 <article @php post_class() @endphp>
- @include('partials.header')
+ 
   <header class="singlePageHeader">
 
     <h1 class="SinglePageHeader_title">{!! $odcinki->name !!}</h1>

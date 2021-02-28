@@ -1,5 +1,7 @@
-<footer class="content-info">
-  <div class="container">
-    @php dynamic_sidebar('sidebar-footer') @endphp
-  </div>
+<footer class="footer">
+    <div class="container">
+        <p class="footer_text"> © 2021 </p>
+        <div class="footer_icons">
+     
+        </div>
 </footer>

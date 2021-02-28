@@ -1,0 +1,44 @@
+body {
+  background-color: $secondColor;
+
+  .episodes {
+    display: flex;
+    padding: 3rem 0;
+    flex-direction: column;
+    justify-content: space-around;
+
+    a {
+      color: black;
+      text-decoration: none;
+
+      .episodes_card {
+        display: flex;
+        border-bottom: black 1px solid;
+        padding-bottom: 3rem;
+        margin-bottom: 3rem;
+
+        .episodes_image {
+          border-radius: 10%;
+          display: block;
+          margin: auto;
+        }
+
+        .episodes_infoCard {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 2rem 2rem;
+
+          .episodes_title {
+            font-size: 2rem;
+            font-weight: bold;
+          }
+
+          .episode_date {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
