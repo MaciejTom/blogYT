@@ -70,9 +70,10 @@ img {
 
 body {
   font-family: "Almendra", serif;
+  background-color: #e9e7e2;
 }
 
-/* line 12, resources/assets/styles/common/_global.scss */
+/* line 13, resources/assets/styles/common/_global.scss */
 
 .container {
   margin-right: auto;
@@ -81,6 +82,57 @@ body {
   padding-right: 10px;
   padding-left: 10px;
   width: 100%;
+}
+
+/* line 1, resources/assets/styles/layouts/_preload.scss */
+
+.preload {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease;
+  flex-direction: column;
+  z-index: 99;
+}
+
+/* line 14, resources/assets/styles/layouts/_preload.scss */
+
+.preload .preload_img {
+  animation-name: spin;
+  animation-duration: 2000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  margin-bottom: 5rem;
+  width: 20%;
+}
+
+/* line 23, resources/assets/styles/layouts/_preload.scss */
+
+.preload .preload_text {
+  color: white;
+  font-size: 2rem;
+}
+
+/* line 29, resources/assets/styles/layouts/_preload.scss */
+
+.preload-finish {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /** Search form */
@@ -152,61 +204,103 @@ body {
   background: #fff;
 }
 
-/* line 4, resources/assets/styles/layouts/_header.scss */
+/* line 3, resources/assets/styles/layouts/_header.scss */
 
 .banner_menu {
   display: flex;
   text-transform: uppercase;
-  background-color: black;
-  padding-top: 1rem;
+  align-items: center;
+  position: fixed;
+  background-color: #2e294e;
+  height: 100vh;
+  width: 100vw;
+  clip-path: circle(100px at -20% 50%);
+  transition: 2s;
+  z-index: 97;
 }
 
-/* line 10, resources/assets/styles/layouts/_header.scss */
+/* line 15, resources/assets/styles/layouts/_header.scss */
 
 .banner_menu .container {
   display: flex;
   justify-content: space-between;
+  position: absolute;
+  left: 6%;
 }
 
-/* line 14, resources/assets/styles/layouts/_header.scss */
+/* line 21, resources/assets/styles/layouts/_header.scss */
 
 .banner_menu .container .nav-primary {
   display: flex;
   align-items: center;
 }
 
-/* line 18, resources/assets/styles/layouts/_header.scss */
+/* line 25, resources/assets/styles/layouts/_header.scss */
 
 .banner_menu .container .nav-primary .nav {
   display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  height: 15rem;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.3rem;
 }
 
-/* line 21, resources/assets/styles/layouts/_header.scss */
+/* line 34, resources/assets/styles/layouts/_header.scss */
 
 .banner_menu .container .nav-primary .nav a {
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
-/* line 25, resources/assets/styles/layouts/_header.scss */
+/* line 38, resources/assets/styles/layouts/_header.scss */
 
 .banner_menu .container .nav-primary .nav a:visited {
-  color: white;
+  color: black;
 }
 
-/* line 30, resources/assets/styles/layouts/_header.scss */
+/* line 43, resources/assets/styles/layouts/_header.scss */
 
 .banner_menu .container .nav-primary .nav li {
   padding-right: 3rem;
 }
 
-/* line 36, resources/assets/styles/layouts/_header.scss */
+/* line 51, resources/assets/styles/layouts/_header.scss */
 
-.banner_menu .container .banner_img {
-  height: 60px;
+.banner_menu.open {
+  clip-path: circle(38% at -10% 50%);
 }
 
-/* line 42, resources/assets/styles/layouts/_header.scss */
+/* line 55, resources/assets/styles/layouts/_header.scss */
+
+.banner_content {
+  height: 100%;
+}
+
+/* line 58, resources/assets/styles/layouts/_header.scss */
+
+.banner_content .container {
+  flex-direction: column;
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+}
+
+/* line 64, resources/assets/styles/layouts/_header.scss */
+
+.banner_content .container .banner_title {
+  font-size: 4.5rem;
+}
+
+/* line 68, resources/assets/styles/layouts/_header.scss */
+
+.banner_content .container .banner_arrow {
+  width: 5rem;
+  transform: rotate(90deg);
+}
+
+/* line 75, resources/assets/styles/layouts/_header.scss */
 
 .banner {
   background-image: linear-gradient(0deg, black 2%, rgba(0, 0, 0, 0.392595) 17%, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.2) 88%, rgba(0, 0, 0, 0.5) 98%), url(/app/themes/blogYT/dist/images/dawid.jpg);
@@ -216,163 +310,224 @@ body {
   background-repeat: no-repeat;
 }
 
-/* line 58, resources/assets/styles/layouts/_header.scss */
-
-.banner .banner_menu {
-  display: flex;
-  text-transform: uppercase;
-  background-color: transparent;
-}
-
-/* line 63, resources/assets/styles/layouts/_header.scss */
-
-.banner .banner_menu .container {
-  display: flex;
-  justify-content: space-between;
-}
-
-/* line 67, resources/assets/styles/layouts/_header.scss */
-
-.banner .banner_menu .container .nav-primary {
-  display: flex;
-  align-items: center;
-}
-
-/* line 71, resources/assets/styles/layouts/_header.scss */
-
-.banner .banner_menu .container .nav-primary .nav {
-  display: flex;
-}
-
-/* line 74, resources/assets/styles/layouts/_header.scss */
-
-.banner .banner_menu .container .nav-primary .nav a {
-  text-decoration: none;
-  color: black;
-}
-
-/* line 78, resources/assets/styles/layouts/_header.scss */
-
-.banner .banner_menu .container .nav-primary .nav a:visited {
-  color: black;
-}
-
-/* line 83, resources/assets/styles/layouts/_header.scss */
-
-.banner .banner_menu .container .nav-primary .nav li {
-  padding-right: 3rem;
-}
-
-/* line 89, resources/assets/styles/layouts/_header.scss */
-
-.banner .banner_menu .container .banner_img {
-  height: 60px;
-}
-
-/* line 95, resources/assets/styles/layouts/_header.scss */
-
-.banner .banner_content {
-  height: calc(100% - 64px);
-}
-
-/* line 98, resources/assets/styles/layouts/_header.scss */
-
-.banner .banner_content .container {
-  flex-direction: column;
-  display: flex;
-  justify-content: space-around;
-  height: 100%;
-}
-
-/* line 104, resources/assets/styles/layouts/_header.scss */
-
-.banner .banner_content .container .banner_title {
-  font-size: 4.5rem;
-}
-
-/* line 108, resources/assets/styles/layouts/_header.scss */
-
-.banner .banner_content .container .banner_arrow {
-  width: 5rem;
-  transform: rotate(90deg);
-}
-
 /* line 1, resources/assets/styles/layouts/_footer.scss */
 
 .footer {
   background-color: black;
 }
 
-/* line 1, resources/assets/styles/layouts/_pages.scss */
+/* line 2, resources/assets/styles/layouts/_pages.scss */
 
-.header {
-  height: 100vh;
+.singlePageHeader .SinglePageHeader_title {
+  background: #e9e7e2;
+  color: black;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
 }
 
-/* line 5, resources/assets/styles/layouts/_pages.scss */
+/* line 10, resources/assets/styles/layouts/_pages.scss */
 
-.SinglePageHeader_hero {
-  height: 80vh;
+.singlePageHeader .SinglePageHeader_title .SinglePageHeader_titleText {
+  position: relative;
+  z-index: 100;
+}
+
+/* line 16, resources/assets/styles/layouts/_pages.scss */
+
+.singlePageHeader .SinglePageHeader_hero {
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* line 23, resources/assets/styles/layouts/_pages.scss */
+
+.singlePageHeader .SinglePageHeader_deco {
+  position: absolute;
+  bottom: -330px;
+  left: 0;
+  pointer-events: none;
+  z-index: 30;
+  width: 100%;
+  height: 360px;
+  overflow: hidden;
+}
+
+/* line 34, resources/assets/styles/layouts/_pages.scss */
+
+.singlePageHeader .SinglePageHeader_deco::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1348px;
+  height: 100%;
+  background: url(/app/themes/blogYT/dist/images/deco.png) 0 0 no-repeat;
+}
+
+/* line 44, resources/assets/styles/layouts/_pages.scss */
+
+.singlePageHeader .SinglePageHeader_deco::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 1348px;
+  width: 1348px;
+  height: 100%;
+  background: url(/app/themes/blogYT/dist/images/deco.png) 0 0 no-repeat;
+}
+
+/* line 55, resources/assets/styles/layouts/_pages.scss */
+
+.singlePageHeader .SinglePageHeader_decoTop {
+  position: relative;
+  bottom: 125px;
+  left: 0;
+  pointer-events: none;
+  z-index: 30;
+  width: 100%;
+  height: 303px;
+  overflow: hidden;
+}
+
+/* line 65, resources/assets/styles/layouts/_pages.scss */
+
+.singlePageHeader .SinglePageHeader_decoTop::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1348px;
+  height: 100%;
+  background: url(/app/themes/blogYT/dist/images/decoTop.png) 0 0 no-repeat;
+}
+
+/* line 75, resources/assets/styles/layouts/_pages.scss */
+
+.singlePageHeader .SinglePageHeader_decoTop::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 1348px;
+  width: 1348px;
+  height: 100%;
+  background: url(/app/themes/blogYT/dist/images/decoTop.png) 0 0 no-repeat;
+}
+
+/* line 88, resources/assets/styles/layouts/_pages.scss */
+
+.SinglePageContent .SinglePageContent_description {
+  font-size: 2rem;
+  padding: 10rem 0 10rem 0;
+}
+
+/* line 93, resources/assets/styles/layouts/_pages.scss */
+
+.SinglePageContent .SinglePageContent_links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* line 98, resources/assets/styles/layouts/_pages.scss */
+
+.SinglePageContent .SinglePageContent_links .embed-container {
+  position: relative;
+  padding-bottom: 34%;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+  width: 700px;
+  margin-bottom: 3rem;
+}
+
+/* line 108, resources/assets/styles/layouts/_pages.scss */
+
+.SinglePageContent .SinglePageContent_links .embed-container iframe,
+.SinglePageContent .SinglePageContent_links .embed-container object,
+.SinglePageContent .SinglePageContent_links .embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 118, resources/assets/styles/layouts/_pages.scss */
+
+.SinglePageContent .SinglePageContent_links .SinglePageContent_yt {
+  width: 700px;
+}
+
+/* line 122, resources/assets/styles/layouts/_pages.scss */
+
+.SinglePageContent .SinglePageContent_links .SinglePageContent_spotify {
+  width: 700px;
+  padding-bottom: 22%;
 }
 
 /* line 1, resources/assets/styles/layouts/_odcinki-page.scss */
 
-body {
-  background-color: #2e294e;
-}
-
-/* line 4, resources/assets/styles/layouts/_odcinki-page.scss */
-
-body .episodes {
+.episodes {
   display: flex;
-  padding: 3rem 0;
   flex-direction: column;
-  justify-content: space-around;
 }
 
-/* line 10, resources/assets/styles/layouts/_odcinki-page.scss */
+/* line 5, resources/assets/styles/layouts/_odcinki-page.scss */
 
-body .episodes a {
+.episodes .episodes_title {
+  padding: 3rem 0 5rem 0;
+  justify-content: center;
+  display: flex;
+  font-size: 3rem;
+}
+
+/* line 12, resources/assets/styles/layouts/_odcinki-page.scss */
+
+.episodes a {
   color: black;
   text-decoration: none;
 }
 
-/* line 14, resources/assets/styles/layouts/_odcinki-page.scss */
+/* line 16, resources/assets/styles/layouts/_odcinki-page.scss */
 
-body .episodes a .episodes_card {
+.episodes a .episodes_card {
   display: flex;
   border-bottom: black 1px solid;
   padding-bottom: 3rem;
   margin-bottom: 3rem;
 }
 
-/* line 20, resources/assets/styles/layouts/_odcinki-page.scss */
+/* line 22, resources/assets/styles/layouts/_odcinki-page.scss */
 
-body .episodes a .episodes_card .episodes_image {
+.episodes a .episodes_card .episodes_image {
   border-radius: 10%;
   display: block;
   margin: auto;
 }
 
-/* line 26, resources/assets/styles/layouts/_odcinki-page.scss */
+/* line 28, resources/assets/styles/layouts/_odcinki-page.scss */
 
-body .episodes a .episodes_card .episodes_infoCard {
+.episodes a .episodes_card .episodes_infoCard {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 2rem 2rem;
+  justify-content: space-around;
 }
 
-/* line 32, resources/assets/styles/layouts/_odcinki-page.scss */
+/* line 35, resources/assets/styles/layouts/_odcinki-page.scss */
 
-body .episodes a .episodes_card .episodes_infoCard .episodes_title {
+.episodes a .episodes_card .episodes_infoCard .episodes_title {
   font-size: 2rem;
   font-weight: bold;
 }
 
-/* line 37, resources/assets/styles/layouts/_odcinki-page.scss */
+/* line 40, resources/assets/styles/layouts/_odcinki-page.scss */
 
-body .episodes a .episodes_card .episodes_infoCard .episode_date {
+.episodes a .episodes_card .episodes_infoCard .episode_date {
   font-weight: bold;
 }
 
@@ -423,16 +578,16 @@ body .episodes a .episodes_card .episodes_infoCard .episode_date {
   font-size: 1.5rem;
   margin-top: 3rem;
   border-radius: 0.3rem;
+  font-weight: bold;
+  transition: 1s ease-in-out;
 }
 
-/* line 38, resources/assets/styles/layouts/_firstSection.scss */
+/* line 40, resources/assets/styles/layouts/_firstSection.scss */
 
 .aboutUs .aboutUs_btn:hover {
   background-color: #be0000;
-  transition: 1s ease-in-out;
   color: black;
-  border: black;
-  font-weight: bold;
+  border-color: #be0000;
 }
 
 /* line 1, resources/assets/styles/layouts/_form.scss */
@@ -442,15 +597,55 @@ body .episodes a .episodes_card .episodes_infoCard .episode_date {
   background-color: #2e294e;
 }
 
-/* line 6, resources/assets/styles/layouts/_form.scss */
+/* line 5, resources/assets/styles/layouts/_form.scss */
 
-.form .form_contact label {
+.form .container {
+  display: flex;
+}
+
+/* line 9, resources/assets/styles/layouts/_form.scss */
+
+.form .container .form_image .banner_img {
+  width: 40rem;
+}
+
+/* line 13, resources/assets/styles/layouts/_form.scss */
+
+.form .container .form_image .banner_img.running {
+  animation: spin 2s ease-in-out 0s infinite;
+}
+
+/* line 17, resources/assets/styles/layouts/_form.scss */
+
+.form .container .form_image .banner_img.rotate {
+  transform: rotateY(360deg);
+  transition: 3s;
+}
+
+/* line 23, resources/assets/styles/layouts/_form.scss */
+
+.form .container .form_form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* line 28, resources/assets/styles/layouts/_form.scss */
+
+.form .container .form_form .form_contact {
+  width: 100%;
+  padding: 0 0 0 6rem;
+}
+
+/* line 32, resources/assets/styles/layouts/_form.scss */
+
+.form .container .form_form .form_contact label {
   font-size: 1.3rem !important;
 }
 
-/* line 10, resources/assets/styles/layouts/_form.scss */
+/* line 36, resources/assets/styles/layouts/_form.scss */
 
-.form .form_contact button {
+.form .container .form_form .form_contact button {
   color: white !important;
   border: 1px black solid !important;
   border-radius: 0.3rem !important;
@@ -458,13 +653,150 @@ body .episodes a .episodes_card .episodes_infoCard .episode_date {
   font-weight: 200 !important;
 }
 
-/* line 18, resources/assets/styles/layouts/_form.scss */
+/* line 44, resources/assets/styles/layouts/_form.scss */
 
-.form .form_contact input,
-.form .form_contact textarea {
+.form .container .form_form .form_contact input,
+.form .container .form_form .form_contact textarea {
   background: black !important;
   color: white !important;
   border-radius: 0.3rem !important;
+  resize: none !important;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(180deg);
+  }
+}
+
+/* line 1, resources/assets/styles/layouts/_sidebarFixed.scss */
+
+.sidebarFixed {
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  background-color: #24203d;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  z-index: 98;
+}
+
+/* line 2, resources/assets/styles/layouts/_sidebarFixed.scss */
+
+.sidebarFixed .banner_dots {
+  display: flex;
+}
+
+/* line 5, resources/assets/styles/layouts/_sidebarFixed.scss */
+
+.sidebarFixed .banner_dots .banner_dot {
+  width: 3px;
+  height: 3px;
+  background-color: black;
+  margin: 5px;
+}
+
+/* line 13, resources/assets/styles/layouts/_sidebarFixed.scss */
+
+.sidebarFixed .nav {
+  display: flex;
+}
+
+/* line 16, resources/assets/styles/layouts/_sidebarFixed.scss */
+
+.sidebarFixed .nav a {
+  text-decoration: none;
+  color: white;
+}
+
+/* line 20, resources/assets/styles/layouts/_sidebarFixed.scss */
+
+.sidebarFixed .nav a:visited {
+  color: white;
+}
+
+/* line 25, resources/assets/styles/layouts/_sidebarFixed.scss */
+
+.sidebarFixed .nav li {
+  padding-right: 3rem;
+}
+
+/* Style the icon bar links */
+
+/* line 42, resources/assets/styles/layouts/_sidebarFixed.scss */
+
+.sidebarFixed_link {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+}
+
+/* Style the social media icons with color, if you want */
+
+/* line 54, resources/assets/styles/layouts/_sidebarFixed.scss */
+
+.facebook:hover {
+  background: #3b5998;
+  color: white;
+}
+
+/* line 60, resources/assets/styles/layouts/_sidebarFixed.scss */
+
+.spotify {
+  border-bottom-right-radius: 25px;
+}
+
+/* line 63, resources/assets/styles/layouts/_sidebarFixed.scss */
+
+.spotify:hover {
+  background: #1ebb56;
+  color: white;
+}
+
+/* line 70, resources/assets/styles/layouts/_sidebarFixed.scss */
+
+.instagram:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: white;
+}
+
+/* line 77, resources/assets/styles/layouts/_sidebarFixed.scss */
+
+.apple:hover {
+  background: black;
+  color: white;
+}
+
+/* line 84, resources/assets/styles/layouts/_sidebarFixed.scss */
+
+.youtube:hover {
+  background: #b00;
+  color: white;
+}
+
+/* line 90, resources/assets/styles/layouts/_sidebarFixed.scss */
+
+.fa-bars {
+  background-color: black;
+  border-top-right-radius: 25px;
+  width: 100%;
+  padding-top: 20px;
+  cursor: click;
 }
 
 

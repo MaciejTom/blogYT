@@ -5,7 +5,7 @@
 @include('partials.firstSection')
 @include('partials.contactForm')
 @include('partials.footer')
-
+@include('partials.sidebarFixed')
   
 
 

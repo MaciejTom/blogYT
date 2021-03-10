@@ -2,22 +2,16 @@
 
 @section('content')
     @include('partials.header')
+    @include('partials.sidebarFixed')
     <div class="container">
-        <h2>{{ the_title() }} </h2>
+        
 
 
 
 
 
-        <div class="episodes flex">
-
-            {{-- <form action="@php home_url('/odcinki') @endphp">
-
-            <input type="text name=" keyword" value="@php isset($_GET['keyword']) ? $_GET['keyword'] : '' @endphp">
-
-            <button action="submit">Szukaj</button>
-        </form> --}}
-
+        <div class="episodes">
+            <h2 class="episodes_title">Najnowsze odcinki </h2>
 
 
             @foreach ($odcinki as $odcinek)

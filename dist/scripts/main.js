@@ -216,9 +216,35 @@ Router.prototype.loadEvents = function loadEvents () {
 /* harmony default export */ __webpack_exports__["a"] = ({
   init: function init() {
     // JavaScript to be fired on all pages
+    ///////////////// PRELOAD FUNCTION
+
+    window.addEventListener('load', function () {
+      var preload = document.querySelector('.preload');
+      preload.classList.add('preload-finish');
+      console.log(preload)
+
+    });
+    //////// Hamburger MENU
+
+    var hamburger = document.querySelector('.fa-bars');
+    var nav = document.querySelector('.banner_menu');
+    
+    
+    
+
+    hamburger.addEventListener('click', function() {
+      console.log(nav);
+      nav.classList.toggle('open');
+      console.log('openopen');
+    });
+   
+    
+    
+
   },
   finalize: function finalize() {
     // JavaScript to be fired on all pages, after page specific JS is fired
+    
   },
 });
 
@@ -231,6 +257,39 @@ Router.prototype.loadEvents = function loadEvents () {
 /* harmony default export */ __webpack_exports__["a"] = ({
   init: function init() {
     // JavaScript to be fired on the home page
+    ////////SPINNING IMAGE (FORM)
+    var e = document.querySelector('.banner_img');
+    var spin = false;
+
+    var spinner = function () {
+      e.classList.toggle('running', spin);
+      if (spin) { setTimeout(spinner, 2000); }
+
+    }
+
+    e.onmouseover = function () {
+      spin = true;
+      spinner();
+    };
+
+    e.onmouseout = function () {
+      spin = false;
+    };
+    console.log(inputs)
+    ////////ROTATING IMAGE (FORM)
+    var inputs = document.querySelectorAll('input');
+    inputs.forEach(function (element) {
+      element.addEventListener('focus', function() {
+        e.classList.add('rotate');
+        console.log('rOTATE');
+        setTimeout(function(){ 
+          e.classList.remove('rotate');
+          console.log('ASDASDASD') ;
+          }, 3000);
+        });
+        
+      
+    });
   },
   finalize: function finalize() {
     // JavaScript to be fired on the home page, after the init JS

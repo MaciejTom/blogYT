@@ -1,7 +1,127 @@
-.header {
-  height: 100vh;
+.singlePageHeader {
+  .SinglePageHeader_title {
+    background: #e9e7e2;
+    color: black;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+
+    .SinglePageHeader_titleText {
+      position: relative;
+      z-index: 100;
+    }
+  }
+
+  .SinglePageHeader_hero {
+    height: 100vh;
+    background-repeat: no-repeat;
+    // background-position: center center;
+    background-size: cover;
+  }
+
+  .SinglePageHeader_deco {
+    position: absolute;
+    // bottom: -115px;
+    bottom: -330px;
+    left: 0;
+    pointer-events: none;
+    z-index: 30;
+    width: 100%;
+    height: 360px;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1348px;
+      height: 100%;
+      background: url(../images/deco.png) 0 0 no-repeat;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 1348px;
+      width: 1348px;
+      height: 100%;
+      background: url(../images/deco.png) 0 0 no-repeat;
+    }
+  }
+
+  .SinglePageHeader_decoTop {
+    position: relative;
+    bottom: 125px;
+    left: 0;
+    pointer-events: none;
+    z-index: 30;
+    width: 100%;
+    height: 303px;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1348px;
+      height: 100%;
+      background: url(../images/decoTop.png) 0 0 no-repeat;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 1348px;
+      width: 1348px;
+      height: 100%;
+      background: url(../images/decoTop.png) 0 0 no-repeat;
+    }
+  }
 }
 
-.SinglePageHeader_hero {
-  height: 80vh;
+.SinglePageContent {
+  .SinglePageContent_description {
+    font-size: 2rem;
+    padding: 10rem 0 10rem 0;
+  }
+
+  .SinglePageContent_links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .embed-container {
+      position: relative;
+      padding-bottom: 34%;
+      overflow: hidden;
+      max-width: 100%;
+      height: auto;
+      width: 700px;
+      margin-bottom: 3rem;
+    }
+
+    .embed-container iframe,
+    .embed-container object,
+    .embed-container embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .SinglePageContent_yt {
+      width: 700px;
+    }
+
+    .SinglePageContent_spotify {
+      width: 700px;
+      padding-bottom: 22%;
+    }
+  }
 }

@@ -2,24 +2,69 @@
   padding: 2rem;
   background-color: $secondColor;
 
-  .form_contact {
-    label {
-      font-size: 1.3rem !important;
+  .container {
+    display: flex;
+
+    .form_image {
+      .banner_img {
+        width: 40rem;
+      }
+
+      .banner_img.running {
+        animation: spin 2s ease-in-out 0s infinite;
+      }
+
+      .banner_img.rotate {
+        transform: rotateY(360deg);
+        transition: 3s;
+      }
     }
 
-    button {
-      color: white !important;
-      border: 1px black solid !important;
-      border-radius: 0.3rem !important;
-      background: black !important;
-      font-weight: 200 !important;
-    }
+    .form_form {
+      width: 100%;
+      display: flex;
+      align-items: center;
 
-    input,
-    textarea {
-      background: black !important;
-      color: white !important;
-      border-radius: 0.3rem !important;
+      .form_contact {
+        width: 100%;
+        padding: 0 0 0 6rem;
+
+        label {
+          font-size: 1.3rem !important;
+        }
+
+        button {
+          color: white !important;
+          border: 1px black solid !important;
+          border-radius: 0.3rem !important;
+          background: black !important;
+          font-weight: 200 !important;
+        }
+
+        input,
+        textarea {
+          background: black !important;
+          color: white !important;
+          border-radius: 0.3rem !important;
+          resize: none !important;
+        }
+      }
     }
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(180deg);
   }
 }

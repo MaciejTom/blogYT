@@ -1,15 +1,22 @@
 // TODO: .banner .nav li {}
 // TODO: .banner .nav a {}
-///////////////////////////////////////STYLES FOR NO FRONT NAV
 .banner_menu {
   display: flex;
   text-transform: uppercase;
-  background-color: black;
-  padding-top: 1rem;
+  align-items: center;
+  position: fixed;
+  background-color: $secondColor;
+  height: 100vh;
+  width: 100vw;
+  clip-path: circle(100px at -20% 50%);
+  transition: 2s;
+  z-index: 97;
 
   .container {
     display: flex;
     justify-content: space-between;
+    position: absolute;
+    left: 6%;
 
     .nav-primary {
       display: flex;
@@ -17,13 +24,19 @@
 
       .nav {
         display: flex;
+        flex-direction: column;
+        font-weight: bold;
+        height: 15rem;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.3rem;
 
         a {
           text-decoration: none;
-          color: white;
+          color: black;
 
           &:visited {
-            color: white;
+            color: black;
           }
         }
 
@@ -32,13 +45,33 @@
         }
       }
     }
+  }
+}
 
-    .banner_img {
-      height: 60px;
+.banner_menu.open {
+  clip-path: circle(38% at -10% 50%);
+}
+
+.banner_content {
+  height: 100%;
+
+  .container {
+    flex-direction: column;
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+
+    .banner_title {
+      font-size: 4.5rem;
+    }
+
+    .banner_arrow {
+      width: 5rem;
+      transform: rotate(90deg);
     }
   }
 }
-///////////////////////////////////////FRONT HEADER STYLES
+
 .banner {
   background-image:
     linear-gradient(
@@ -54,61 +87,4 @@
   background-size: cover;
   background-position: 0% 30%;
   background-repeat: no-repeat;
-
-  .banner_menu {
-    display: flex;
-    text-transform: uppercase;
-    background-color: transparent;
-
-    .container {
-      display: flex;
-      justify-content: space-between;
-
-      .nav-primary {
-        display: flex;
-        align-items: center;
-
-        .nav {
-          display: flex;
-
-          a {
-            text-decoration: none;
-            color: black;
-
-            &:visited {
-              color: black;
-            }
-          }
-
-          li {
-            padding-right: 3rem;
-          }
-        }
-      }
-
-      .banner_img {
-        height: 60px;
-      }
-    }
-  }
-
-  .banner_content {
-    height: calc(100% - 64px);
-
-    .container {
-      flex-direction: column;
-      display: flex;
-      justify-content: space-around;
-      height: 100%;
-
-      .banner_title {
-        font-size: 4.5rem;
-      }
-
-      .banner_arrow {
-        width: 5rem;
-        transform: rotate(90deg);
-      }
-    }
-  }
 }

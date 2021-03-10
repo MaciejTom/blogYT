@@ -14,6 +14,7 @@
 
 /** Import theme styles */
 @import "common/global";
+@import "layouts/preload";
 @import "components/buttons";
 @import "components/comments";
 @import "components/forms";
@@ -27,3 +28,4 @@
 @import "layouts/odcinki-page";
 @import "layouts/firstSection";
 @import "layouts/form";
+@import "layouts/sidebarFixed";
